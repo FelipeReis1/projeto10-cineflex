@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function TopTitle() {
   return (
     <StyledTopTitle>
-      <p onClick={""}>CINEFLEX</p>
+      <p>CINEFLEX</p>
     </StyledTopTitle>
   );
 }
