@@ -15,7 +15,7 @@ export default function MovieSelection() {
     promise.catch((err) => console.log(err.response.data));
   }, []);
   if (movieImg === undefined) {
-    return <p>Loading...</p>;
+    return <p style={{ marginTop: 100 }}>Loading...</p>;
   }
 
   return (
@@ -26,7 +26,7 @@ export default function MovieSelection() {
       <StyledMovieSelection>
         {movieImg.map((m) => (
           <StyledMovie key={m.id}>
-            <Link to={`/sessions/${m.id}`}>
+            <Link to={`/sessoes/${m.id}`}>
               <img src={m.posterURL} alt={m.overview} />
             </Link>
           </StyledMovie>

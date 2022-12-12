@@ -29,7 +29,7 @@ export default function SeatSelection() {
         request
       );
       promise.then(() => {
-        navigate("/success", {
+        navigate("/sucesso", {
           state: {
             title: movie.title,
             time,
@@ -57,7 +57,9 @@ export default function SeatSelection() {
       setTime(res.data.name);
     });
   }, []);
-
+  if (seats.length === 0) {
+    return <p style={{ marginTop: 100 }}>Loading...</p>;
+  }
   return (
     <StyledSeatSelection>
       <StyledSelectionContainer>

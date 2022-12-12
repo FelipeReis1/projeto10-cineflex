@@ -18,7 +18,9 @@ export default function Sessions() {
       console.log(err.response.data);
     });
   }, []);
-
+  if (items.length === 0) {
+    return <p style={{ marginTop: 100 }}>Loading...</p>;
+  }
   return (
     <StyledSessionsDiv>
       <StyledSelectionContainer>
@@ -35,7 +37,7 @@ export default function Sessions() {
                 <Link
                   style={{ textDecoration: "none" }}
                   key={s.id}
-                  to={`/seats/${s.id}`}
+                  to={`/assentos/${s.id}`}
                 >
                   <StyledSessionButton key={s.id}>{s.name}</StyledSessionButton>
                 </Link>

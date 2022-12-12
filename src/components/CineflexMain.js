@@ -15,9 +15,9 @@ export default function CineflexMain() {
         <TopTitle />
         <Routes>
           <Route path="/" element={<MovieSelection />} />
-          <Route path="/sessions/:idMovie" element={<Sessions />} />
-          <Route path="/seats/:idSeats" element={<SeatSelection />} />
-          <Route path="/success" element={<Success />} />
+          <Route path="/sessoes/:idMovie" element={<Sessions />} />
+          <Route path="/assentos/:idSeats" element={<SeatSelection />} />
+          <Route path="/sucesso" element={<Success />} />
         </Routes>
       </StyledContainer>
     </BrowserRouter>

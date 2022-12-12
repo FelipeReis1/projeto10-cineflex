@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Success() {
   const location = useLocation();
@@ -29,7 +29,9 @@ export default function Success() {
         <p>Nome: {location.state.userName} </p>
         <p>CPF: {location.state.cpf}</p>
       </StyledLowerContainers>
-      <StyledBottomButton>Voltar para home</StyledBottomButton>
+      <Link style={{ textDecoration: "none" }} to="/">
+        <StyledBottomButton>Voltar para home</StyledBottomButton>
+      </Link>
     </StyledSuccess>
   );
 }
