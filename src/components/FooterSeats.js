@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Footer({ posterURL, children }) {
+export default function FooterSeats({ posterURL, children }) {
   return (
     <StyledFooter>
       <StyledImg>
@@ -34,8 +34,9 @@ const StyledFooter = styled.div`
     color: #293845;
     margin-left: 14px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 `;
 
@@ -48,6 +49,6 @@ const StyledImg = styled.div`
   margin-top: 14px;
   margin-left: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
 `;

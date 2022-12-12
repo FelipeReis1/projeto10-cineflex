@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./Footer";
 
@@ -20,7 +20,7 @@ export default function Sessions() {
   }, []);
 
   return (
-    <>
+    <StyledSessionsDiv>
       <StyledSelectionContainer>
         <p>Selecione o Horário</p>
       </StyledSelectionContainer>
@@ -32,7 +32,13 @@ export default function Sessions() {
             </StyledSessionDate>
             <StyledSessionButtonContainer>
               {i.showtimes.map((s) => (
-                <StyledSessionButton key={s.id}>{s.name}</StyledSessionButton>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  key={s.id}
+                  to={`/seats/${s.id}`}
+                >
+                  <StyledSessionButton key={s.id}>{s.name}</StyledSessionButton>
+                </Link>
               ))}
             </StyledSessionButtonContainer>
           </div>
@@ -40,9 +46,12 @@ export default function Sessions() {
       <Footer posterURL={items.posterURL}>
         <div>{`${items.title}`}</div>
       </Footer>
-    </>
+    </StyledSessionsDiv>
   );
 }
+const StyledSessionsDiv = styled.div`
+  margin-bottom: 140px;
+`;
 
 const StyledSessionButtonContainer = styled.div`
   width: 100%;

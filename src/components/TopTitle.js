@@ -9,7 +9,7 @@ export default function TopTitle() {
 }
 
 const StyledTopTitle = styled.div`
-  width: 375px;
+  width: 100%;
   height: 67px;
   background-color: #c3cfd9;
   position: fixed;
