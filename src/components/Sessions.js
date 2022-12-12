@@ -32,14 +32,16 @@ export default function Sessions() {
             <StyledSessionDate data-test="movie-day">
               {i.weekday} - {i.date}
             </StyledSessionDate>
-            <StyledSessionButtonContainer data-test="showtime">
+            <StyledSessionButtonContainer>
               {i.showtimes.map((s) => (
                 <Link
                   style={{ textDecoration: "none" }}
                   key={s.id}
                   to={`/assentos/${s.id}`}
                 >
-                  <StyledSessionButton key={s.id}>{s.name}</StyledSessionButton>
+                  <button key={s.id} data-test="showtime">
+                    {s.name}
+                  </button>
                 </Link>
               ))}
             </StyledSessionButtonContainer>
@@ -60,6 +62,28 @@ const StyledSessionButtonContainer = styled.div`
   margin-left: 24px;
   display: flex;
   margin-bottom: 23px;
+  button {
+    width: 83px;
+    height: 43px;
+    background-color: #e8833a;
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    border-style: none;
+    margin-right: 8px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 const StyledSessionDate = styled.p`
   font-family: "Roboto";
@@ -72,28 +96,7 @@ const StyledSessionDate = styled.p`
   margin-bottom: 23px;
   margin-left: 24px;
 `;
-const StyledSessionButton = styled.button`
-  width: 83px;
-  height: 43px;
-  background-color: #e8833a;
-  border-radius: 3px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  border-style: none;
-  margin-right: 8px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
+
 const StyledSelectionContainer = styled.div`
   width: 100%;
   height: 110px;
