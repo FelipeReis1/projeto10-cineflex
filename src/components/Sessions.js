@@ -32,9 +32,10 @@ export default function Sessions() {
             <StyledSessionDate data-test="movie-day">
               {i.weekday} - {i.date}
             </StyledSessionDate>
-            <StyledSessionButtonContainer>
+            <StyledSessionButtonContainer data-test="showtime">
               {i.showtimes.map((s) => (
                 <Link
+                  data-test="showtime"
                   style={{ textDecoration: "none" }}
                   key={s.id}
                   to={`/assentos/${s.id}`}
