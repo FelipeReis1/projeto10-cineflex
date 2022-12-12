@@ -103,4 +103,7 @@ const StyledBottomButton = styled.button`
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  &:hover {
+    cursor: pointer;
+  }
 `;
