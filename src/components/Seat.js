@@ -29,6 +29,7 @@ export default function Seat({
   const [selected, setSelected] = useState(false);
   return (
     <StyledButton
+      data-test="seat"
       onClick={availability}
       selected={selected}
       isAvailable={isAvailable}

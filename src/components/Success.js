@@ -11,26 +11,28 @@ export default function Success() {
           <br /> com sucesso!
         </p>
       </StyledSelectionContainer>
-      <StyledLowerContainers>
+      <StyledLowerContainers data-test="movie-info">
         <h1>Filme e sessao</h1>
         <p>{location.state.title} </p>
         <p>
           {location.state.day.weekday} {location.state.time}
         </p>
       </StyledLowerContainers>
-      <StyledLowerContainers>
+      <StyledLowerContainers data-test="seats-info">
         <h1>Ingressos</h1>
         {location.state.seatsNumber.map((s, index) => (
           <p key={index}>Assento: {s} </p>
         ))}
       </StyledLowerContainers>
-      <StyledLowerContainers>
+      <StyledLowerContainers data-test="client-info">
         <h1>Comprador</h1>
         <p>Nome: {location.state.userName} </p>
         <p>CPF: {location.state.cpf}</p>
       </StyledLowerContainers>
       <Link style={{ textDecoration: "none" }} to="/">
-        <StyledBottomButton>Voltar para home</StyledBottomButton>
+        <StyledBottomButton data-test="go-home-btn">
+          Voltar para home
+        </StyledBottomButton>
       </Link>
     </StyledSuccess>
   );

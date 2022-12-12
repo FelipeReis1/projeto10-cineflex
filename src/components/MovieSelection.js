@@ -25,7 +25,7 @@ export default function MovieSelection() {
       </StyledSelectionContainer>
       <StyledMovieSelection>
         {movieImg.map((m) => (
-          <StyledMovie key={m.id}>
+          <StyledMovie data-test="movie" key={m.id}>
             <Link to={`/sessoes/${m.id}`}>
               <img src={m.posterURL} alt={m.overview} />
             </Link>

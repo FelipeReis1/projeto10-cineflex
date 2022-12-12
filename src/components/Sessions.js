@@ -29,7 +29,7 @@ export default function Sessions() {
       {items.days &&
         items.days.map((i) => (
           <div key={i.id}>
-            <StyledSessionDate>
+            <StyledSessionDate data-test="movie-day">
               {i.weekday} - {i.date}
             </StyledSessionDate>
             <StyledSessionButtonContainer>
@@ -39,7 +39,9 @@ export default function Sessions() {
                   key={s.id}
                   to={`/assentos/${s.id}`}
                 >
-                  <StyledSessionButton key={s.id}>{s.name}</StyledSessionButton>
+                  <StyledSessionButton data-test="showtime" key={s.id}>
+                    {s.name}
+                  </StyledSessionButton>
                 </Link>
               ))}
             </StyledSessionButtonContainer>

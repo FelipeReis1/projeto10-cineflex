@@ -98,6 +98,7 @@ export default function SeatSelection() {
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             placeholder="Digite seu nome..."
+            data-test="client-name"
           ></input>
           <p>CPF do comprador:</p>
           <input
@@ -108,8 +109,9 @@ export default function SeatSelection() {
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
             placeholder="Digite seu CPF..."
+            data-test="client-cpf"
           ></input>
-          <StyledBottomButton type="submit">
+          <StyledBottomButton type="submit" data-test="book-seat-btn">
             Reservar assento(s)
           </StyledBottomButton>
         </form>

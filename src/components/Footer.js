@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Footer({ posterURL, children }) {
   return (
-    <StyledFooter>
+    <StyledFooter data-test="footer">
       <StyledImg>
         <img src={posterURL} alt={""}></img>
       </StyledImg>
