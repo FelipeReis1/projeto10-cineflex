@@ -17,29 +17,32 @@ export default function SeatSelection() {
 
   function reserveSeat(event) {
     event.preventDefault();
+    if (seatNumber.length > 0) {
+      const request = {
+        ids: seatId,
+        name: userName,
+        cpf: cpf,
+      };
 
-    const request = {
-      ids: seatId,
-      name: userName,
-      cpf: cpf,
-    };
-
-    const promise = axios.post(
-      "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many",
-      request
-    );
-    promise.then(() => {
-      navigate("/success", {
-        state: {
-          title: movie.title,
-          time,
-          cpf,
-          userName,
-          day,
-          seatsNumber: seatNumber,
-        },
+      const promise = axios.post(
+        "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many",
+        request
+      );
+      promise.then(() => {
+        navigate("/success", {
+          state: {
+            title: movie.title,
+            time,
+            cpf,
+            userName,
+            day,
+            seatsNumber: seatNumber,
+          },
+        });
       });
-    });
+    } else {
+      alert("Você precisa selecionar no mínimo um assento antes de reservar");
+    }
   }
 
   const { idSeats } = useParams();
@@ -239,4 +242,7 @@ const StyledBottomButton = styled.button`
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  &:hover {
+    cursor: pointer;
+  }
 `;
